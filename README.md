@@ -94,3 +94,15 @@ function b() external {
    a();
 }
 ```
+
+9. ### Different role on second-call function
+```solidity
+
+function a() onlyRole("admin") {
+   b();
+}
+
+function b() onlyRole("owner")
+
+```
+
