@@ -10,3 +10,14 @@ function addMessage(string text) external {
 +     messAdded = true;
 }
    ```
+
+2. ### Wrong order of variables in IF statment
+```diff
+if(a > b) {
+-  c = b - a;
++  c = a - b;
+}
+else {
+-  c = a - b;
++  c = b - a;
+```
