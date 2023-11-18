@@ -42,7 +42,7 @@ require(getNumber() == 0);
 +   a = 5;
 ```
 
-4. Assign the same value to variable in IF and ELSE blocks
+4. ### Assign the same value to variable in IF and ELSE blocks
 ```diff
 if(...) {
 -  c=5
@@ -52,7 +52,7 @@ else {
 }
 ```
 
-5. Always True If statment
+5. ### Always True If statment
 ```diff
 -  if(a==b || b !=a )
 +  if(a==b) {
@@ -67,13 +67,13 @@ or
 -  if(a==b && b==a)
 ```
 
-6. The same result of IF statment
+6. ### The same result of IF statment
 ```diff
 -  result = a==b ? true, true
 +  result = a==b ? true, false
 ```
 
-7. Same error message
+7. ### Same error message
 ```diff
 require(a==5, "Wrong number");
 require(b==7, "Wrong number");
