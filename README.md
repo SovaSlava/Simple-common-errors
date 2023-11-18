@@ -84,3 +84,13 @@ if(a==5) error WrongNumber();
 if(b==7) error WrongNumber();
 ```
 
+8. ### Call public payable function from other nonPayable function
+```diff
+function a() public  payable {
+        ...
+}
+
+function b() external {
+   a();
+}
+```
