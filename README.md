@@ -106,3 +106,8 @@ function b() onlyRole("owner")
 
 ```
 
+10. ### Multiply by 1
+```diff
+-   uint amount = getBalance() * 1;
++   uint amount = getBalance();
+```
