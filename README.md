@@ -42,7 +42,7 @@ require(getNumber() == 0);
 +   a = 5;
 ```
 
-4. ### Assign the same value to variable in IF and ELSE blocks
+4. ### The same opearations  in IF and ELSE blocks
 ```diff
 if(...) {
 -  c=5
@@ -51,7 +51,25 @@ else {
 -  c=5
 }
 ```
+or
+```diff
+if(...) {
+-  c=5
+}
+else if {
+-  c=5
+}
+```
+or
+```
+if(...) {
+   b();
+}
+else {
+   b();
+}
 
+```
 5. ### Always True If statment
 ```diff
 -  if(a==b || b !=a )
