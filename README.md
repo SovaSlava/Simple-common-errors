@@ -129,3 +129,27 @@ function b() onlyRole("owner")
 -   uint amount = getBalance() * 1;
 +   uint amount = getBalance();
 ```
+
+11. ### Dont add new value in cached array
+```diff
+   uint256 tokensLength = _tokens.length;
+   for (uint256 i; i < deposits.length; ) {
+      IERC20 _token = deposits[i].token;
+      uint256 _amount = deposits[i].amount;
+      depositedTokenAmountForTde[_actualTDE][_token] += _amount;
+      /// @dev Checks whether the token is present in depositedTokenAddressForTde, otherwise we add it.
+      bool found;
+      for (uint256 j; j < tokensLength; ) {
+         if (address(_token) == _tokens[j]) {
+            found = true;
+            break;
+         }
+         unchecked { ++j; }
+      }
+
+      if (!found) {
+         depositedTokenAddressForTde[_actualTDE].push(address(_token));
++        _tokens.push(address(_token));
++        ++tokensLength;
+      }
+```    
