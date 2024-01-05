@@ -2,6 +2,9 @@
 
 
 1. ### Variable set to same value
+   When we check, that variable is not equal to value, and after that, assign opposite value to this variable.
+   For example: we check in require statement, that variable is not equal to `true`, and after that, set `false` to this value.
+   Or we check that the variable is equal to some value and then in the same block we set the same value for it. Although the variable is already equal to it 
 ```diff
 function addMessage(string text) external {
    require(messAdded != true);
