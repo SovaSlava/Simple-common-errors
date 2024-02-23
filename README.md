@@ -156,3 +156,15 @@ function b() onlyRole("owner")
 +        ++tokensLength;
       }
 ```    
+
+12. ### Cycle reduction with multiple removals
+```diff
+for(uint i=0; i<holders.length; i++) {
+   if(holders[i] == from] {
+   // Remove element
+   holders[i] = holders[holders.length - 1];
+   holders.pop();
++  i--;
+   }
+}
+```
