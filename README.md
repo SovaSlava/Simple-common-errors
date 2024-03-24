@@ -168,3 +168,13 @@ for(uint i=0; i<holders.length; i++) {
    }
 }
 ```
+
+13. ### Unuser local variables
+```diff
+ string public name;
+ function setName(string memory newName) external {
+        uint number;
+        name = newName;
+        number = 5; // we dont read this value any more
+}
+```
