@@ -1,4 +1,4 @@
-# AnalizerLog
+# Simple errors that can be automated to find
 
 
 1. ### Variable set to same value
@@ -12,7 +12,7 @@ function addMessage(string text) external {
 -     messAdded = false;
 +     messAdded = true;
 }
-   ```
+```
 or
 ```diff
 if(a == 5) {
@@ -105,35 +105,13 @@ if(a==5) error WrongNumber();
 if(b==7) error WrongNumber();
 ```
 
-8. ### Call public payable function from other nonPayable function
-```diff
-function a() public  payable {
-        ...
-}
-
-function b() external {
-   a();
-}
-```
-
-9. ### Different role on second-call function
-```solidity
-
-function a() onlyRole("admin") {
-   b();
-}
-
-function b() onlyRole("owner")
-
-```
-
-10. ### Multiply by 1
+8. ### Multiply by 1
 ```diff
 -   uint amount = getBalance() * 1;
 +   uint amount = getBalance();
 ```
 
-11. ### Dont add new value in cached array
+9. ### Dont add new value in cached array
 ```diff
    uint256 tokensLength = _tokens.length;
    for (uint256 i; i < deposits.length; ) {
@@ -157,7 +135,7 @@ function b() onlyRole("owner")
       }
 ```    
 
-12. ### Cycle reduction with multiple removals
+10. ### Cycle reduction with multiple removals
 ```diff
 for(uint i=0; i<holders.length; i++) {
    if(holders[i] == from] {
@@ -169,7 +147,7 @@ for(uint i=0; i<holders.length; i++) {
 }
 ```
 
-13. ### Unuser local variables
+1. ### Not stored to storage value from local variables
 ```diff
  string public name;
  function setName(string memory newName) external {
